@@ -1,0 +1,47 @@
+h1{
+	color:navy;
+	text-align: center;
+
+}
+.flex {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:200px;
+	margin-top: 30px;
+	margin-left: 8px;
+}
+
+.im1{
+	margin-top: 100px;
+	margin-left: 580px;
+	border:1px solid black;
+	padding: 10px ;
+	width:200px;
+	height: 250px;
+	background-color: navy;
+}
+
+.im {
+	
+	border: 1px solid white;
+	width:180px;
+	height: 70px;
+	margin-left: 8px;
+	color:white;
+	}
+
+.flex #yellow{
+	background-color: lightblue;
+	width:60px;
+}
+
+.flex input{
+	width:60px;
+	background-color: lightgreen;
+}
+
+.flex #pink{
+	width:60px;
+	background-color: pink;
+}
