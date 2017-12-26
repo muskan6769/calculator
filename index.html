@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>try1</title>
+	<title>try</title>
 	<link rel="stylesheet" type=text/css href="calculater.css">
 </head>
 
@@ -9,35 +9,11 @@
 <h1>CALCULATOR</h1>
 
 	<script type="text/javascript">
-        var m=0,temp=0,x,z,k=1,n=0,l,p=1,sym=0;
+        var m=0,temp=0,x,z,k=1,n=0,l,p=1;
         function fun(x)
         {    
         	temp=temp+x;
             document.getElementById("first").innerHTML=temp;  
-
-            if(sym=="+")
-            {   
-                 temp=parseInt(m)+parseInt(temp);
-                
-            }
-
-            else if(sym=="-")
-            {   //document.write("lmlg");
-                temp=parseInt(n)-parseInt(temp);
-                
-            }
-
-            else if(sym=="*")
-            {   
-                temp=parseInt(k)*parseInt(temp);
-                
-            }
-
-            else if(sym=="/")
-            {    
-                temp=parseInt(p)/parseInt(temp);
-                
-            }
         }
 
         function add(z,l)
@@ -97,9 +73,33 @@
 
         function equal()
         {  
-            document.getElementById("first").innerHTML=temp;
-            m=0,n=0,k=1,p=1;
-        	sym=0;
+        	if(sym=="+")
+        	{   
+                 temp=parseInt(m)+parseInt(temp);
+                document.getElementById("first").innerHTML=temp;
+                m=0,n=0,k=1,p=1;
+            }
+
+            else if(sym=="-")
+            {   //document.write("lmlg");
+                temp=parseInt(n)-parseInt(temp);
+            	document.getElementById("first").innerHTML=temp;
+            	m=0,n=0,k=1,p=1;
+            }
+
+            else if(sym=="*")
+            {   
+            	temp=parseInt(k)*parseInt(temp);
+            	document.getElementById("first").innerHTML=temp;
+            	m=0,n=0,k=1,p=1;
+            }
+
+            else if(sym=="/")
+            {    
+            	temp=parseInt(p)/parseInt(temp);
+            	document.getElementById("first").innerHTML=temp;
+            	m=0,n=0,k=1,p=1;
+            }
         }  
 	</script>
  
