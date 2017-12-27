@@ -1,47 +1,142 @@
-h1{
-	color:navy;
-	text-align: center;
+<html>
+<head>
+	<title>try</title>
+	<link rel="stylesheet" type=text/css href="calc.css">
+</head>
 
-}
-.flex {
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	width:200px;
-	margin-top: 30px;
-	margin-left: 8px;
-}
+<body>
 
-.im1{
-	margin-top: 100px;
-	margin-left: 580px;
-	border:1px solid black;
-	padding: 10px ;
-	width:200px;
-	height: 250px;
-	background-color: navy;
-}
+<h1>CALCULATOR</h1>
 
-.im {
-	
-	border: 1px solid white;
-	width:180px;
-	height: 70px;
-	margin-left: 8px;
-	color:white;
-	}
+	<script type="text/javascript">
+        var m=0,temp=0,x,z,k=1,n=0,l,p=1;
+        function fun(x)
+        {
+        	temp=temp+x;
+            document.getElementById("first").innerHTML=temp;
+        }
 
-.flex #yellow{
-	background-color: lightblue;
-	width:60px;
-}
+        function add(z,l)
+        {   //document.write(l);
+            document.getElementById("first").innerHTML=l;
+            m=parseInt(m)+parseInt(z);
+            sym=l;
+            temp=0;
+        }
 
-.flex input{
-	width:60px;
-	background-color: lightgreen;
-}
+        function sub(z,l)
+        {
+        	//document.write(l);
+            document.getElementById("first").innerHTML=l;
+            if(n==0)
+            {
+            	n=z;
+            }
+            else
+            {
+                 n=(parseInt(n)-parseInt(z));
+            }
+            sym=l;
+            temp=0;
 
-.flex #pink{
-	width:60px;
-	background-color: pink;
-}
+        }
+
+        function mul(z,l)
+        {
+            document.getElementById("first").innerHTML=l;
+            k=parseInt(k)*parseInt(z);
+            sym=l;
+            temp=0;
+        }
+
+        function divi(z,l)
+        {
+            document.getElementById("first").innerHTML=l;
+            if(p==1)
+            {
+            	p=z;
+            }
+            else
+            {
+            p=parseInt(p)/parseInt(z);
+            }
+            temp=0;
+            sym=l;
+
+        }
+
+        function cl()
+        {
+        	temp=0;
+        	document.getElementById("first").innerHTML=temp;
+        }
+
+        function equal()
+        {
+        	if(sym=="+")
+        	{
+                 temp=parseInt(m)+parseInt(temp);
+                document.getElementById("first").innerHTML=temp;
+                m=0,n=0,k=1,p=1;
+            }
+
+            else if(sym=="-")
+            {   //document.write("lmlg");
+                temp=parseInt(n)-parseInt(temp);
+            	document.getElementById("first").innerHTML=temp;
+            	m=0,n=0,k=1,p=1;
+            }
+
+            else if(sym=="*")
+            {
+            	temp=parseInt(k)*parseInt(temp);
+            	document.getElementById("first").innerHTML=temp;
+            	m=0,n=0,k=1,p=1;
+            }
+
+            else if(sym=="/")
+            {
+            	temp=parseInt(p)/parseInt(temp);
+            	document.getElementById("first").innerHTML=temp;
+            	m=0,n=0,k=1,p=1;
+            }
+						else if(sym=='<-')
+						{
+							temp=temp.substring(0,temp.length-1);
+							document.getElementById("first").innerHTML=temp;
+							m=0,n=0,k=1,p=1;
+						}
+        }
+	</script>
+
+<div class="im1">
+
+	<div class="im">
+		    <p id="first"></p>
+	</div>
+
+     <div class="flex">
+		<form >
+			<input type="button" value="1" onclick="fun(value)">
+			<input type="button" value="2" onclick="fun(value)">
+			<input type="button" value="3" onclick="fun(value)">
+			<input type="button" value="4" onclick="fun(value)">
+			<input type="button" value="5" onclick="fun(value)">
+			<input type="button" value="6" onclick="fun(value)">
+			<input type="button" value="7" onclick="fun(value)">
+			<input type="button" value="8" onclick="fun(value)">
+			<input type="button" value="9" onclick="fun(value)">
+			<input type="button" value="0" onclick="fun(value)">
+			<input id="yellow" type="button" value="+" onclick="add(temp,value)">
+			<input id="yellow" type="button" value="-" onclick="sub(temp,value)">
+			<input id="yellow" type="button" value="*" onclick="mul(temp,value)">
+			<input id="yellow" type="button" value="/" onclick="divi(temp,value)">
+			<input id="yellow" type="button" value="<-" onclick="back(temp,value)">
+			<input id="pink" type="button" value="=" onclick="equal()">
+			<input id="pink" type="button" value="clear" onclick="cl()">
+	    </form>
+    </div>
+</div>
+
+</body>
+</html>
