@@ -1,47 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+body{
+	background-color: #e6f3ff;
+}
+
+
 h1{
-	color:navy;
+
+	font-family: 'Dosis', sans-serif;
 	text-align: center;
+	font-size: 60px;
+	color:#9999ff;
 
 }
 .flex {
 	display:flex;
 	flex-direction:row;
 	flex-wrap:wrap;
-	width:200px;
+	width:300px;
 	margin-top: 30px;
 	margin-left: 8px;
 }
 
 .im1{
 	margin-top: 100px;
-	margin-left: 580px;
-	border:1px solid black;
-	padding: 10px ;
-	width:200px;
-	height: 250px;
-	background-color: navy;
+	margin-left: 520px;
+	border:1px #c1c1a4;
+	padding: 15px ;
+	width:283px;
+	height: 300px;
+	background-color: #d6d6c2;
+	border-radius: 15px;
+
 }
 
 .im {
-	
-	border: 1px solid white;
-	width:180px;
-	height: 70px;
+
+
+	width:267px;
+	height:70px;
 	margin-left: 8px;
-	color:white;
+	background-color:#999966;
+	opacity: 0.4;
+	border-radius: 5px;
+	justify-content: center;
 	}
 
 .flex #yellow{
-	background-color: lightblue;
-	width:60px;
+	background-color: #00b3b3;
+	opacity: 0.4;
+	width:50px;
+	height: 40px;
+
 }
 
 .flex input{
-	width:60px;
+	width:50px;
 	background-color: lightgreen;
+	opacity: 0.6;
+	height: 40px;
 }
 
 .flex #pink{
-	width:60px;
+	width:132px;
 	background-color: pink;
+	height:50px;
 }
