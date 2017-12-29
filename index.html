@@ -9,11 +9,19 @@
 <h1>CALCULATOR</h1>
 
     <script type="text/javascript">
-        var m=0,temp=0,x,z,k=1,n=0,l,p=1;
+        var m=0,temp=0,x,z,k=1,n=0,l,p=1,sym=0;
         function fun(x)
         {       
+            if(sym=="sin"|| sym=="cos"||sym=="tan" )
+            {
+              temp=temp+x;
+              document.getElementById("first").innerHTML=sym+"("+temp+")";  
+            }
+            else
+            {
             temp=temp+x;
             document.getElementById("first").innerHTML=temp;
+            }
         }
 
         function add(z,l)
@@ -80,6 +88,23 @@
             temp=0;
             document.getElementById("first").innerHTML=temp;
         }
+        
+        function s(l){
+            document.getElementById("first").innerHTML=l;
+            sym=l;
+          
+        }
+
+        function c(l){
+            document.getElementById("first").innerHTML=l;
+            sym=l;
+          
+        }
+        function t(l){
+            document.getElementById("first").innerHTML=l;
+            sym=l;
+          
+        }
 
         function equal()
         {
@@ -87,30 +112,48 @@
             {
                  temp=parseInt(m)+parseInt(temp);
                 document.getElementById("first").innerHTML=temp;
-                m=0,n=0,k=1,p=1;
+                m=0,n=0,k=1,p=1,sym=0;
             }
 
             else if(sym=="-")
             {   //document.write("lmlg");
                 temp=parseInt(n)-parseInt(temp);
                 document.getElementById("first").innerHTML=temp;
-                m=0,n=0,k=1,p=1;
+                m=0,n=0,k=1,p=1,sym=0;
             }
 
             else if(sym=="*")
             {
                 temp=parseInt(k)*parseInt(temp);
                 document.getElementById("first").innerHTML=temp;
-                m=0,n=0,k=1,p=1;
+                m=0,n=0,k=1,p=1,sym=0;
             }
 
             else if(sym=="/")
             {
                 temp=parseInt(p)/parseInt(temp);
                 document.getElementById("first").innerHTML=temp;
-                m=0,n=0,k=1,p=1;
+                m=0,n=0,k=1,p=1,sym=0;
             }
-            
+            else if(sym=="sin")
+            {  
+                temp=Math.sin(temp*Math.PI/180);
+                   document.getElementById("first").innerHTML=temp;
+                  m=0,n=0,k=1,p=1,sym=0;
+            }
+            else if(sym=="cos")
+            {  
+                temp=Math.cos(temp*Math.PI/180);
+                   document.getElementById("first").innerHTML=temp;
+                  m=0,n=0,k=1,p=1,sym=0;
+            }
+            else if(sym=="tan")
+            {  
+                temp=Math.tan(temp*Math.PI/180);
+                   document.getElementById("first").innerHTML=temp;
+                  m=0,n=0,k=1,p=1,sym=0;
+            }
+
             
                         
         }
@@ -139,6 +182,9 @@
             <input id="yellow" type="button" value="*" onclick="mul(temp,value)">
             <input id="yellow" type="button" value="/" onclick="divi(temp,value)">
             <input id="yellow" type="button" value="<-" onclick="back(temp)">
+            <input id="y" type="button" value="sin" onclick="s(value)">
+            <input id="y" type="button" value="cos" onclick="c(value)">
+             <input id="y" type="button" value="tan" onclick="t(value)">
             <input id="pink" type="button" value="=" onclick="equal()">
             <input id="pink" type="button" value="clear" onclick="cl()">
         </form>
